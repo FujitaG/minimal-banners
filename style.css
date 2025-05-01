@@ -1,0 +1,52 @@
+/* ------------ 基本変数 ------------ */
+:root{
+  --bg        : #fafafa;          /* 背景色 (ほぼ白) */
+  --border    : #dcdcdc;          /* カード枠線       */
+  --shadow    : 0 8px 16px rgb(0 0 0 / .03);
+  --radius    : 8px;
+  --gap       : clamp(1rem, 2vw, 2rem);
+  --duration  : .35s;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:-apple-system, "Helvetica Neue", sans-serif;
+}
+
+.wrapper{
+  min-height:100vh;
+  display:flex;
+  gap:var(--gap);
+  justify-content:center;          /* 横中央  ([Aligning items in a flex container - CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container?utm_source=chatgpt.com)) */
+  align-items:center;               /* 縦中央 */
+  flex-wrap:wrap;                   /* 狭い画面は縦並び */
+  padding:var(--gap);
+}
+
+/* ------------ バナー・カード ------------ */
+.card{
+  display:block;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  max-width:644px;                  /* 元画像幅に合わせ上限を設定 */
+  box-shadow:var(--shadow);
+  transition:transform var(--duration) cubic-bezier(.4,0,.2,1),
+             box-shadow var(--duration);       /* transform は高パフォーマンス  ([scale() - CSS: Cascading Style Sheets - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale?utm_source=chatgpt.com)) */
+}
+
+.card img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.card:hover,
+.card:focus-visible{
+  transform:scale(1.01);            /* 1 % だけ拡大（抑制された動き） */
+  box-shadow:0 12px 32px rgb(0 0 0 / .08);
+  outline:none;                     /* WCAG フォーカスリング要件は残す  ([Understanding Success Criterion 2.4.7: Focus Visible | WAI - W3C](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html?utm_source=chatgpt.com)) */
+}

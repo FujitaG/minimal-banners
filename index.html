@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Choose Your Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 先読みで LCP 改善 : rel=preload は MDN 推奨  ([rel=preload - HTML: HyperText Markup Language - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload?utm_source=chatgpt.com)) -->
+  <link rel="preload" as="image" href="img/banner-jka.jpg">
+  <link rel="preload" as="image" href="img/banner-keirin.jpg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrapper">
+    <!-- 水色バナー：JKA Social Action -->
+    <a class="card" href="https://www.jka-cycle.jp/">
+      <img src="img/banner-jka.jpg" alt="JKA Social Action 公式サイト">
+    </a>
+
+    <!-- 白色バナー：KEIRIN.JP -->
+    <a class="card" href="https://keirin.jp/">
+      <img src="img/banner-keirin.jpg" alt="KEIRIN.JP 公式サイト">
+    </a>
+  </main>
+</body>
+</html>
