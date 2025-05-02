@@ -24,6 +24,7 @@ body{
   align-items:center;               /* 縦中央 */
   flex-wrap:wrap;                   /* 狭い画面は縦並び */
   padding:var(--gap);
+  flex-direction:column;            /* 縦方向に配置 */
 }
 
 /* ------------ バナー・カード ------------ */
@@ -49,4 +50,18 @@ body{
   transform:scale(1.01);            /* 1 % だけ拡大（抑制された動き） */
   box-shadow:0 12px 32px rgb(0 0 0 / .08);
   outline:none;                     /* WCAG フォーカスリング要件は残す  ([Understanding Success Criterion 2.4.7: Focus Visible | WAI - W3C](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html?utm_source=chatgpt.com)) */
+}
+
+/* ------------ 謝辞テキスト ------------ */
+.acknowledgment {
+  width: 100%;
+  font-size: 0.75rem;
+  color: #9e9e9e;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
